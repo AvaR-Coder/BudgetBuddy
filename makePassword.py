@@ -16,7 +16,7 @@ def checkPasswordStrength(password):
     return False
 
   if not re.search(r"\d", password):
-    print("Password needs at least one digit.")
+    print("Password needs at least one number.")
     return False
 
   if not re.search(r"[!@#$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?]", password):
