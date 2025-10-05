@@ -16,6 +16,7 @@ def signUp():
   password = None
   balance = None
   error = None
+  message = None
   if request.method == "POST":
     name = request.form["username"]
     email = request.form["email"]
