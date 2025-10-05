@@ -4,26 +4,16 @@ from argon2 import PasswordHasher
 def checkPasswordStrength(password):
 
   if len(password) < 8:
-    print("Password needs to be at 8 characters long.")
-    return False
-    
+    return "Password needs to be at 8 characters long."
   if not re.search(r"[A-Z]", password):
-    print("Password needs at least one uppercase letter.")
-    return False
-
+    return "Password needs at least one uppercase letter."
   if not re.search(r"[a-z]", password):
-    print("Password needs at least one lowercase letter.")
-    return False
-
+    return "Password needs at least one lowercase letter."
   if not re.search(r"\d", password):
-    print("Password needs at least one number.")
-    return False
-
+    return "Password needs at least one number."
   if not re.search(r"[!@#$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?]", password):
-    print("Password needs at least one special character.")
-    return False
-  
-  return True
+    return "Password needs at least one special character."
+  return None
 
 def hashThePassword(password):
   
