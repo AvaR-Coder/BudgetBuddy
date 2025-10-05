@@ -24,7 +24,8 @@ def signUp():
 
     error = checkPasswordStrength(password)
     if error is None:
-      
+      hashThePassword(password):
+  
   return render_template("signup.html", name=name, email=email, balance=balance)
 
 if __name__ == '__main__':
