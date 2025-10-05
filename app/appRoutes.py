@@ -1,13 +1,10 @@
 from flask import Flask, request, render_template_string
 import sqlite3
 import os
+from functions import checkPasswordStrength, hashThePassword
+from functions import connectDB
 
 app = Flask(__name__)
-
-def connectDB():
-  conn = sqlite3.connect("customers.db")
-  conn.row_factory = sqlite3.Row
-  return conn
 
 @app.route("/signUp", methods=["GET", "POST"])
 def signUp():
