@@ -24,9 +24,10 @@ def signUp():
 
     error = checkPasswordStrength(password)
     if error is None:
-      hashThePassword(password):
+      hashed_password = hashThePassword(password)
+      message = "Good password"
   
-  return render_template("signup.html", name=name, email=email, balance=balance)
+  return render_template_string(form_html, name=name, email=email, balance=balance, error=error, message=message)
 
 if __name__ == '__main__':
   app.run(debug=True)
