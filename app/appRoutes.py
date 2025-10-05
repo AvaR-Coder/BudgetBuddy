@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, render_template_string
 import sqlite3
 import os
 
@@ -9,12 +9,18 @@ def connectDB():
   conn.row_factory = sqlite3.Row
   return conn
 
-@app.route("/", methods=["GET", "POST"])
-def index():
-    name = None
-    if request.method == "POST":
-        name = request.form["username"]
-    return render_template_string(form_html, name=name)
+@app.route("/signUp", methods=["GET", "POST"])
+def signUp():
+  name = None
+  email = None
+  password = None
+  balance = None
+  if request.method == "POST":
+    name = request.form["username"]
+    email = request.form["email"]
+    password = request.form["password"]
+    balance = request.form["balance"]
+  return render_template("signup.html", name=name, email=email, balance=balance)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+  app.run(debug=True)
