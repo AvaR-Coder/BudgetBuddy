@@ -1,2 +1,2 @@
 from .passwordFs import checkPasswordStrength, hashThePassword
-from DBFs import 
+from databaseFs import 
