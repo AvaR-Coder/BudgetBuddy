@@ -15,11 +15,16 @@ def signUp():
   email = None
   password = None
   balance = None
+  error = None
   if request.method == "POST":
     name = request.form["username"]
     email = request.form["email"]
     password = request.form["password"]
     balance = request.form["balance"]
+
+    error = checkPasswordStrength(password)
+    if error is None:
+      
   return render_template("signup.html", name=name, email=email, balance=balance)
 
 if __name__ == '__main__':
