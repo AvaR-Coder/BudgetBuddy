@@ -1,2 +1,2 @@
-from .passwordFs import check_password_strength
-from .db_utils import connect_db
+from .passwordFs import checkPasswordStrength, hashThePassword
+from DBFs import 
