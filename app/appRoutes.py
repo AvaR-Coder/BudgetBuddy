@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template_string
 from functions import checkPasswordStrength, hashThePassword, connectDB
 
-
 app = Flask(__name__)
 
 @app.route("/signUp", methods=["GET", "POST"])
