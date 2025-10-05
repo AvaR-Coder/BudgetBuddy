@@ -1,8 +1,6 @@
 from flask import Flask, request, render_template_string
-import sqlite3
-import os
-from functions import checkPasswordStrength, hashThePassword
-from functions import connectDB
+from functions import checkPasswordStrength, hashThePassword, connectDB
+
 
 app = Flask(__name__)
 
@@ -14,6 +12,7 @@ def signUp():
   balance = None
   error = None
   message = None
+  
   if request.method == "POST":
     name = request.form["username"]
     email = request.form["email"]
