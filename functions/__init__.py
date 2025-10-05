@@ -1,2 +1,2 @@
 from .passwordFs import checkPasswordStrength, hashThePassword
-from databaseFs import 
+from databaseFs import connectDB
