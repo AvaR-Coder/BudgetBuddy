@@ -10,10 +10,10 @@ def signUp():
   password = None
   balance = None
   error = None
-  message = None
+  
   
   if request.method == "POST":
-    name = request.form["username"]
+    name = request.form["name"]
     email = request.form["email"]
     password = request.form["password"]
     balance = request.form["balance"]
@@ -21,9 +21,9 @@ def signUp():
     error = checkPasswordStrength(password)
     if error is None:
       hashed_password = hashThePassword(password)
-      message = "Good password"
+      insertCustomerData(name, email, hashed_password, balance, 0, 0, 0)
   
-  return render_template_string(form_html, name=name, email=email, balance=balance, error=error, message=message)
+  return render_template_string(form_html, name=name, email=email, balance=balance, error=error)
 
 if __name__ == '__main__':
   app.run(debug=True)
