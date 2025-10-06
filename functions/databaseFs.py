@@ -10,8 +10,8 @@ def insertCustomerData(name, email, password, balance, budget, expences, savings
   try:
     cursor = conn.cursor()
     cursor.execute(
-      "INSERT INTO customers (name, email, password, balance, budget, expences, savings) VALUES (?, ?, ?, ?, ?, ?, ?)",
-      (name, email, password, balance, budget, expences, savings)
+      "INSERT INTO customers (name, email, password, balance, budget, expenses, savings) VALUES (?, ?, ?, ?, ?, ?, ?)",
+      (name, email, password, balance, budget, expenses, savings)
     )
     conn.commit()
     return True
