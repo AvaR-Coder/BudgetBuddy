@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template_string
-from functions import checkPasswordStrength, hashThePassword, connectDB, insertCustomerData
+from functions import checkPasswordStrength, hashThePassword, connectDB, insertCustomerData, getLoginData, 
 
 app = Flask(__name__)
 
