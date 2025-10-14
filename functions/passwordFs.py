@@ -20,3 +20,14 @@ def hashThePassword(password):
   ph = PasswordHasher(time_cost=2, memory_cost=102400, parallelism=8, salt_len=16, hash_len=32)
   hashed_password = ph.hash(password)
   return hashed_password
+
+def getLoginData
+  conn = connectDB()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM customers WHERE email = ?", (email,))
+    user = cursor.fetchone()
+    return user
+  except Exception as e: #No existing user
+    return None
+  finally:
+    conn.close()
