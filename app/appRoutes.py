@@ -24,5 +24,7 @@ def signUp():
   
   return render_template_string(form_html, name=name, email=email, balance=balance, error=error)
 
+
+
 if __name__ == '__main__':
   app.run(debug=True)
